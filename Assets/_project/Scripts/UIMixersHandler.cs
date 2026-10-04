@@ -11,7 +11,6 @@ public class UIMixersHandler : MonoBehaviour
     private const string BGMVolumeString = "BGMVolume";
     private const string ButtonsVolumeString = "ButtonsVolume";
 
-    [SerializeField] private TMP_Text _onOffSoundText;
     [SerializeField] private AudioMixer _mixer;
     [SerializeField] private AudioSource _buttonsAudioSource;
     [SerializeField] private Slider _generalVolumeSlider;
