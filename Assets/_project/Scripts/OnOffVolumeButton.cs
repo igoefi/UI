@@ -6,10 +6,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Button))]
 public class OnOffVolumeButton : MonoBehaviour
 {
-    private const int MinimumVolume = -80;
-    
-    [SerializeField] private AudioMixer _mixer;
-    [SerializeField] private string _masterVolumeString;
+    [SerializeField] private AudioListener _listener;
 
     private Button _button;
     
@@ -28,10 +25,6 @@ public class OnOffVolumeButton : MonoBehaviour
         _button.onClick.RemoveListener(OnOffSound);
     }
     
-    public void OnOffSound()
-    {
-        _mixer.GetFloat(_masterVolumeString, out float volume);
-        int value = volume > MinimumVolume ? MinimumVolume : 0;
-        _mixer.SetFloat(_masterVolumeString, value);
-    }
+    public void OnOffSound() =>
+        _listener.enabled = !_listener.enabled;
 }

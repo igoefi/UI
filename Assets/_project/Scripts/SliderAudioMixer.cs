@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class SliderAudioMixer : MonoBehaviour
 {
     private const int MinimumVolume = -80;
+    private const int MaximumVolume = 0;
+    private const int VolumeCoef = 20;
     
     [SerializeField] private AudioMixer _mixer;
     [SerializeField] private string _volumeString;
@@ -30,9 +32,9 @@ public class SliderAudioMixer : MonoBehaviour
 
     private void ChangeVolume(float value)
     {        
-        if (value == 0)
+        if (value == MaximumVolume)
             _mixer.SetFloat(_volumeString, MinimumVolume);
         else
-            _mixer.SetFloat(_volumeString, Mathf.Log10(value) * 20);
+            _mixer.SetFloat(_volumeString, Mathf.Log10(value) * VolumeCoef);
     }
 }
