@@ -3057,7 +3057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43c065246afbdd74a8193692259ab3c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OnOffVolumeButton
-  _listener: {fileID: 0}
+  _listener: {fileID: 1475725543}
 --- !u!1 &2085798403
 GameObject:
   m_ObjectHideFlags: 0
